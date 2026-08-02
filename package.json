@@ -1,0 +1,16 @@
+{
+  "name": "practice-electron-react-01",
+  "version": "1.0.0",
+  "description": "Simple Electron + React 17 learning sample",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . --disable-gpu --disable-software-rasterizer --no-sandbox"
+  },
+  "devDependencies": {
+    "electron": "^25.9.0"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}
