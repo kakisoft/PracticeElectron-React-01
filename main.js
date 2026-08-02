@@ -10,7 +10,9 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 420,
     height: 320,
-    resizable: false,
+    minWidth: 320,
+    minHeight: 260,
+    resizable: true,
     title: 'Electron React 17 Sample',
     webPreferences: {
       nodeIntegration: true
