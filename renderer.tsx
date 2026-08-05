@@ -7,7 +7,7 @@ function App(): JSX.Element {
   return (
     <div className="app">
       <h1>Electron + React 17</h1>
-      <p>TypeScript で書き直した学習用サンプルです。</p>
+      <p>学習用サンプル</p>
       <div className="card">
         <p className="count">カウント: {count}</p>
         <button onClick={() => setCount(count + 1)}>カウントアップ</button>

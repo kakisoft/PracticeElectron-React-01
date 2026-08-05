@@ -20,7 +20,7 @@ Electron + React の学習用サンプルです。
 - 学習後に捨てやすいように、機能は最小限です
 
 ## 学習ポイント
-- main.js: Electron のメインプロセス
+- main.ts: Electron のメインプロセス
 - index.html: 画面の土台
-- renderer.js: React で描画する内容
+- renderer.tsx: React で描画する内容
 - styles.css: 見た目の調整
