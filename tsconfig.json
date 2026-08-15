@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "types": ["node"]
+    "types": ["node", "react", "react-dom"]
   },
   "include": ["main.ts", "renderer.tsx", "src/**/*.ts", "src/**/*.tsx"]
 }

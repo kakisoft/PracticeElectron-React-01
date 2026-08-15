@@ -18,7 +18,8 @@ function createWindow() {
         resizable: true,
         title: 'Electron React 17 Sample',
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: false,
+            contextIsolation: true
         }
     });
     void win.loadFile(path_1.default.resolve(__dirname, '..', 'index.html'));

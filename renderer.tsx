@@ -1,6 +1,3 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-
 function App(): JSX.Element {
   const [count, setCount] = React.useState(0);
 

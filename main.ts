@@ -15,7 +15,8 @@ function createWindow(): void {
     resizable: true,
     title: 'Electron React 17 Sample',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: false,
+      contextIsolation: true
     }
   });
 
