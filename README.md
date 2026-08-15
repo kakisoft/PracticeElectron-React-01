@@ -1,31 +1,29 @@
 # PracticeElectron-01
-```
+
+Electron Forge + Webpack + React 17 + TypeScript の学習用サンプルです。
+
+## 起動
+
+```powershell
 npm install
 npm run dev
-npm start
 ```
 
+`npm run dev`では、Electron ForgeがWebpackを起動し、TypeScriptを開発用成果物へビルドしてからElectronを起動します。レンダラープロセスはHMRに対応します。
 
-Electron + React の学習用サンプル。  
+## パッケージ生成
 
-## 構成
-- Electron
-- React 17
-- 最小限の UI
-- メインプロセスとレンダラープロセスの基本を体験しやすい構成
+```powershell
+npm run build
+```
 
-## 使い方
-1. 依存関係をインストールする
-   - npm install
-2. アプリを起動する
-   - npm start
+パッケージ成果物は`out/`に生成されます。
 
-## 画面内容
-- ボタンを押すと React の state が変わる
-- 学習後に捨てやすいように、機能は最小限です
+## エントリ構成
 
-## 学習ポイント
-- main.ts: Electron のメインプロセス
-- index.html: 画面の土台
-- renderer.tsx: React で描画する内容
-- styles.css: 見た目の調整
+- `package.json`の`main`: `.webpack/main`（Electronが実行するWebpack成果物）
+- `webpack.main.config.js`の`entry`: `src/main/main.ts`（メインプロセスのTypeScriptソース）
+- `forge.config.js`: Electron ForgeとWebpack Pluginの統合設定
+- `src/renderer/renderer.tsx`: Reactレンダラーのソースエントリ
+
+`.webpack/`はForgeが開発起動時に生成するため、Gitでは管理しません。

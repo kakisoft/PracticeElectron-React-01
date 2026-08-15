@@ -4,13 +4,12 @@
     "module": "commonjs",
     "lib": ["DOM", "ES2019"],
     "jsx": "react",
-    "outDir": "dist",
-    "rootDir": ".",
+    "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
     "types": ["node", "react", "react-dom"]
   },
-  "include": ["main.ts", "renderer.tsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
