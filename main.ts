@@ -21,6 +21,10 @@ function createWindow(): void {
   });
 
   void win.loadFile(path.resolve(__dirname, '..', 'index.html'));
+
+  if (process.env.NODE_ENV === 'development') {
+    win.webContents.openDevTools({ mode: 'detach' });
+  }
 }
 
 app.whenReady().then(createWindow);

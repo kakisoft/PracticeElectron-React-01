@@ -23,6 +23,9 @@ function createWindow() {
         }
     });
     void win.loadFile(path_1.default.resolve(__dirname, '..', 'index.html'));
+    if (process.env.NODE_ENV === 'development') {
+        win.webContents.openDevTools({ mode: 'detach' });
+    }
 }
 electron_1.app.whenReady().then(createWindow);
 electron_1.app.on('window-all-closed', () => {

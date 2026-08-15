@@ -20,7 +20,11 @@ const children = [
       '--disable-software-rasterizer',
       '--no-sandbox'
     ],
-    { cwd: projectRoot, stdio: 'inherit' }
+    {
+      cwd: projectRoot,
+      stdio: 'inherit',
+      env: { ...process.env, NODE_ENV: 'development' }
+    }
   )
 ];
 
