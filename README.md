@@ -1,7 +1,12 @@
 # PracticeElectron-01
+```
+npm install
+npm run dev
+npm start
+```
 
-Electron + React の学習用サンプルです。  
-用途は「学習のための超シンプルな雛形」です。
+
+Electron + React の学習用サンプル。  
 
 ## 構成
 - Electron
