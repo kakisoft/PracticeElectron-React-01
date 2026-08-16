@@ -1,19 +1,29 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Sidebar, PageId } from './components/Sidebar';
+import { CounterPage } from './pages/CounterPage';
+import { SettingsPage } from './pages/SettingsPage';
+import { StatusPage } from './pages/StatusPage';
 import './styles.css';
 
 function App(): JSX.Element {
-  const [count, setCount] = React.useState(0);
+  const [currentPage, setCurrentPage] = React.useState<PageId>('counter');
+
+  function renderPage(): JSX.Element {
+    switch (currentPage) {
+      case 'counter':
+        return <CounterPage />;
+      case 'status':
+        return <StatusPage />;
+      case 'settings':
+        return <SettingsPage />;
+    }
+  }
 
   return (
-    <div className="app">
-      <h1>Electron + React 17</h1>
-      <p>学習用サンプル</p>
-      <div className="card">
-        <p className="count">カウント: {count}</p>
-        <button onClick={() => setCount(count + 1)}>カウントアップ</button>
-      </div>
-      <p className="hint">ボタンを押すと React の状態が変わります。</p>
+    <div className="app-shell">
+      <Sidebar currentPage={currentPage} onSelect={setCurrentPage} />
+      <main className="main-content">{renderPage()}</main>
     </div>
   );
 }

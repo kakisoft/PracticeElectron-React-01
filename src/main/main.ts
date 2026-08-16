@@ -9,10 +9,10 @@ app.commandLine.appendSwitch('no-sandbox');
 
 function createWindow(): void {
   const win = new BrowserWindow({
-    width: 480,
-    height: 460,
-    minWidth: 400,
-    minHeight: 380,
+    width: 760,
+    height: 540,
+    minWidth: 640,
+    minHeight: 460,
     resizable: true,
     title: 'Electron React 17 Sample',
     webPreferences: {
