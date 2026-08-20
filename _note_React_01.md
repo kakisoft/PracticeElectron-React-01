@@ -19,6 +19,13 @@ React.useEffect(() => {
 }, []);
 ```
 
+＜型指定＞
+```ts
+React.useState<PageId>('counter')
+
+export type PageId = 'counter' | 'status' | 'settings';
+```
+
 
 # useState
 変更内容をリアルタイムで画面に反映する機能。  
