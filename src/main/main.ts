@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 
@@ -21,14 +22,33 @@ function createWindow(): void {
     }
   });
 
-  void win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
   if (!app.isPackaged) {
-    win.webContents.openDevTools({ mode: 'detach' });
+    win.webContents.once('did-finish-load', () => {
+      win.webContents.openDevTools({ mode: 'detach' });
+    });
   }
+
+  void win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 }
 
-app.whenReady().then(createWindow);
+async function startApplication(): Promise<void> {
+  await app.whenReady();
+
+  if (!app.isPackaged) {
+    try {
+      const extension = await installExtension(REACT_DEVELOPER_TOOLS, {
+        loadExtensionOptions: { allowFileAccess: true }
+      });
+      console.log(`DevTools extension loaded: ${extension.name}`);
+    } catch (error) {
+      console.warn('React DevTools could not be loaded.', error);
+    }
+  }
+
+  createWindow();
+}
+
+void startApplication();
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
