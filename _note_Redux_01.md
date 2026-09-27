@@ -1,31 +1,31 @@
-Redux > Store
+Redux > Store  
 
-__________________
-Redux - 巨大倉庫
+__________________  
+Redux - 巨大倉庫  
 
-Store   - 倉庫全体
-slice   - 部署
-state   - 部署の中の荷物
-reducer - 倉庫作業員。           （≒ メソッド）
-action  - 部署で何するかという内容（≒ メソッド。部署の中で作業員がいて、それが何するか） -> APIコール
-
-
-無理してバックエンドで理解しない。
+Store   - 倉庫全体  
+slice   - 部署  
+state   - 部署の中の荷物  
+reducer - 倉庫作業員。           （≒ メソッド）  
+action  - 部署で何するかという内容（≒ メソッド。部署の中で作業員がいて、それが何するか） -> APIコール  
 
 
-state - 複数保持？
-
-class Albuls
-
-albumInstance01 = new Albuls("santiano")
-albumInstance02 = new Albuls("aaa")
+無理してバックエンドで理解しない。  
 
 
-'------------
-state - こういうのがいっぱい入ってる。
-albumInstance01 = new Albuls("santiano")
-albumInstance02 = new Albuls("aaa")
-'------------
+state - 複数保持？  
+
+class Albuls  
+
+albumInstance01 = new Albuls("santiano")  
+albumInstance02 = new Albuls("aaa")  
+
+
+'------------  
+state - こういうのがいっぱい入ってる。  
+albumInstance01 = new Albuls("santiano")  
+albumInstance02 = new Albuls("aaa")  
+'------------  
 
 
 ```js
